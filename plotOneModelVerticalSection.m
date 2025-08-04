@@ -67,7 +67,7 @@ function plotTimeThicknessAccumulation(params, layerThickness, initialSurfaceEle
     ylabel('Elevation/thickness (m)');
     drawnow
 
-    screenShotFName = strcat("screenShots/vertAccumulation.png");
+    screenShotFName = strcat("vertAccumulation.png");
     fprintf("Exporting vertical accumulation plots to file %s ...", screenShotFName)
     exportgraphics(gcf,screenShotFName)
     fprintf("Done\n\n")
@@ -82,7 +82,7 @@ function plotThicknessDistribution(totalDepositedThickness)
     grid on
     drawnow
     fprintf("Accommodation PDF mean is %5.4f\n", mean(totalDepositedThickness));
-    screenShotFName = strcat("screenShots/accommPDF.png");
+    screenShotFName = strcat("accommPDF.png");
     fprintf("Exporting accommodation PDF plot to file %s ...", screenShotFName)
     exportgraphics(gcf,screenShotFName)
     fprintf("Done\n\n")

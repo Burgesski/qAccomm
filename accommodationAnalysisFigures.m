@@ -4,7 +4,7 @@ function accommodationAnalysisFigures
 
     initialisationPlot = 0;
     animationCounter = 0; % Set to zero for no animation, or >1 for chron animation interval eg 10 to show every 10th iteration
-    plotOneModelFlag = 0;
+    plotOneModelFlag = 1;
     shorelineInc = 10; % Cross section shorline markers might need a >1 time step interval to plot clearly
     lithoColourFlag = 1; % 0 = plot strata with water depth colour coding, 1 = plot output showing grainsize
     modelName = "clasticConstSLSSSandMud";

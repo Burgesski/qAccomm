@@ -58,9 +58,9 @@ function plotStrata(params, strata, totalChronsToPlot, modelName, animationCount
     if chronInterval > 0 % Trap situation of too few chrons to plot time lines - chron interval will be zero in this case
         % timelines = strata.chrons(1:chronInterval:totalChronsToPlot, :);
         for t = 1:chronInterval:totalChronsToPlot
-            line(params.xcoVect, strata.chrons(t, :), "Color", [0,0,0]) % plot the chrons
+            line(params.xcoVect, strata.chrons(t, :), "Color", [0,0,0], "linestyle", "-", "marker", "none") % plot the chrons, specify default line type and no marker to avoid strange "bug" where this changes unless specified
         end
-        line(params.xcoVect, strata.chrons(totalChronsToPlot, :), "Color", [0,0,0]) % plot the youngest chron also, to make sure final deposition is visible
+        line(params.xcoVect, strata.chrons(totalChronsToPlot, :), "Color", [0,0,0], "linestyle", "-", "marker", "none") % plot the youngest chron also, to make sure final deposition is visible
     end
 
     % Plot sea-level
@@ -188,7 +188,7 @@ function plotStrata(params, strata, totalChronsToPlot, modelName, animationCount
     fprintf("Done\n");
 
     if totalChronsToPlot == params.totalChrons
-        screenShotFName = strcat("screenShots/", modelName, ".png");
+        screenShotFName = strcat(modelName, ".png");
         fprintf("Exporting cross section and chronostrat diagram for %d chrons for model %s to file %s ...", totalChronsToPlot, modelName, screenShotFName)
         exportgraphics(gcf,screenShotFName)
         fprintf("Done\n\n")
